@@ -1,11 +1,14 @@
 import React from 'react'
 import './Form.css';
+import useForm from './useForm';
 
 
 export default function FormSignup() {
+    const {handleChange,handleSubmit,values} = useForm()
+
     return (
         <div className='form-content-right'>
-      <form onSubmit={()=>console.log('hi')} className='form' noValidate>
+      <form onSubmit={handleSubmit} className='form' noValidate>
         <h1>
           Get started with us today! Create your account by filling out the
           information below.
@@ -17,8 +20,8 @@ export default function FormSignup() {
             type='text'
             name='username'
             placeholder='Enter your username'
-            // value={values.username}
-            onChange={()=>console.log('hi')}
+            value={values.username}
+            onChange={handleChange}
           />
           {/* {errors.username && <p>{errors.username}</p>} */}
         </div>
@@ -29,8 +32,8 @@ export default function FormSignup() {
             type='email'
             name='email'
             placeholder='Enter your email'
-            // value={values.email}
-            onChange={()=>console.log('hi')}
+            value={values.email}
+            onChange={handleChange}
           />
           {/* {errors.email && <p>{errors.email}</p>} */}
         </div>
@@ -41,8 +44,8 @@ export default function FormSignup() {
             type='password'
             name='password'
             placeholder='Enter your password'
-            // value={values.password}
-            onChange={()=>console.log('hi')}
+            value={values.password}
+            onChange={handleChange}
           />
           {/* {errors.password && <p>{errors.password}</p>} */}
         </div>
@@ -53,8 +56,8 @@ export default function FormSignup() {
             type='password'
             name='password2'
             placeholder='Confirm your password'
-            // value={values.password2}
-            onChange={()=>console.log('hi')}
+            value={values.password2}
+            onChange={handleChange}
           />
           {/* {errors.password2 && <p>{errors.password2}</p>} */}
         </div>
