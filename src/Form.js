@@ -1,7 +1,16 @@
-import React, { Fragment } from 'react'
+import React, { Fragment,useState } from 'react'
 import FormSignup from './FormSignup'
+import './Form.css';
+import FormSignup from './FormSignup';
+import FormSuccess from './FormSuccess';
 
 export default function Form() {
+
+  const [isSubmitted, isSubmitted] = useState(false)
+
+  function submitForm () {
+    setIsSubmitted(true)
+  }
     return (
         <Fragment>
             <div className='form-container'>
@@ -9,7 +18,11 @@ export default function Form() {
         <div className='form-content-left'>
           <img className='form-img' src='img/img-2.svg' alt='spaceship' />
         </div>
-        <FormSignup/>
+        {!isSubmitted ? (
+          <FormSignup submitForm = {submitForm}/>
+        ) : (
+          <FormSuccess />
+        )}
       </div>
         </Fragment>
     )

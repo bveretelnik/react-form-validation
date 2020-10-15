@@ -1,10 +1,14 @@
 import React from 'react'
 import './Form.css';
 import useForm from './useForm';
+import validate from './validateInfo';
 
 
-export default function FormSignup() {
-    const {handleChange,handleSubmit,values} = useForm()
+export default function FormSignup({submitForm}) {
+    const {handleChange,handleSubmit,values, errors} = useForm(
+      submitForm,
+      validate
+    )
 
     return (
         <div className='form-content-right'>
@@ -23,7 +27,7 @@ export default function FormSignup() {
             value={values.username}
             onChange={handleChange}
           />
-          {/* {errors.username && <p>{errors.username}</p>} */}
+          {errors.username && <p>{errors.username}</p>}
         </div>
         <div className='form-inputs'>
           <label className='form-label'>Email</label>
@@ -35,7 +39,7 @@ export default function FormSignup() {
             value={values.email}
             onChange={handleChange}
           />
-          {/* {errors.email && <p>{errors.email}</p>} */}
+          {errors.email && <p>{errors.email}</p>}
         </div>
         <div className='form-inputs'>
           <label className='form-label'>Password</label>
@@ -47,7 +51,7 @@ export default function FormSignup() {
             value={values.password}
             onChange={handleChange}
           />
-          {/* {errors.password && <p>{errors.password}</p>} */}
+          {errors.password && <p>{errors.password}</p>}
         </div>
         <div className='form-inputs'>
           <label className='form-label'>Confirm Password</label>
@@ -59,7 +63,7 @@ export default function FormSignup() {
             value={values.password2}
             onChange={handleChange}
           />
-          {/* {errors.password2 && <p>{errors.password2}</p>} */}
+          {errors.password2 && <p>{errors.password2}</p>}
         </div>
         <button className='form-input-btn' type='submit'>
           Sign up
