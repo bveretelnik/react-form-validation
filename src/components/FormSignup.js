@@ -75,6 +75,10 @@ const {handleChange, handleSubmit, values, errors } = useForm(submitForm, valida
             <button className='form-input-btn' type='submit'>
               Sign up
             </button>
+            {/* <div className='form-icons'>
+            <i className="fab fa-github"></i>
+            <i className="fab fa-google"></i>
+            </div> */}
             <div className='form-span'>
               <span>Already have an account?
             <button className='form-input-login' onClick={loginForm}>

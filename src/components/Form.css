@@ -203,6 +203,10 @@
     text-align: center;
     margin-top: 30px;
   }
+
+  .form-icons i{
+    width: 300px;
+  }
   /* .form-input-login a {
     text-decoration: none;
     color: #27cdff;
