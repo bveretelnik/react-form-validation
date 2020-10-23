@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './Form.css';
+<<<<<<< HEAD
 import validateInfo from './validateInfo';
 import useForm from './useForm';
 
@@ -8,6 +9,17 @@ export default function FormSignup({submitForm, loginForm}) {
 
 
 const {handleChange, handleSubmit, values, errors } = useForm(submitForm, validateInfo)
+=======
+import useForm from './useForm';
+import validate from './validateInfo';
+
+
+export default function FormSignup({submitForm}) {
+    const {handleChange,handleSubmit,values, errors} = useForm(
+      submitForm,
+      validate
+    )
+>>>>>>> c1dc54bdf45d0df8cc26b8471042f75c604150c8
 
     return (
         <div className='form-content-right'>
